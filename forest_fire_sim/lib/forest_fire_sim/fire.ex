@@ -7,6 +7,8 @@ defmodule ForestFireSim.Fire do
     receive do
       :advance ->
         send(world, {:advance_fire, xy})
+        if intensity <= 1, do: exit :normal
+        burn(world, xy, intensity - 1)
     end
   end
 end
