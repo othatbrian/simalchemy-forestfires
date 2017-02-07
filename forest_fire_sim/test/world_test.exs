@@ -66,7 +66,6 @@ defmodule WorldTest do
     assert_receive {:fire_started, ^neighbor_xy, ^intensity}
   end
 
-  @tag todo: true
   test "can render the current state of the world" do
     forest = Forest.from_string("&*")
     fire_starter = fn _fire -> :ok end

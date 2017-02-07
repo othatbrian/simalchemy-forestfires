@@ -20,6 +20,10 @@ defmodule ForestFireSim.World do
           fire_starter.({xy, intensity}) end)
         Forest.reduce_fire(new_forest, xy)
         |> manage(fire_starter)
+      :render ->
+        Forest.to_string(forest)
+        |> IO.puts
+        manage(forest, fire_starter)
     end
   end
 end
