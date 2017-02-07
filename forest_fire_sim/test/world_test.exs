@@ -50,7 +50,6 @@ defmodule WorldTest do
     assert_receive {:debug_location_response, {:fire, ^fresh_fire_intensity}}
   end
 
-  @tag todo: true
   test "starts new fires during an advance" do
     forest = Forest.from_string("&*")
     test_process = self
