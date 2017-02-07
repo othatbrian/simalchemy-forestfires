@@ -13,7 +13,11 @@ defmodule ForestFireSim.World do
       {:debug_location, xy, requestor} ->
         send(requestor, {:debug_location_response,
           Forest.get_location(forest, xy)})
-        manage forest
+        manage(forest)
+      {:advance_fire, xy} ->
+        {forest, _} = Forest.spread_fire(forest, xy)
+        Forest.reduce_fire(forest, xy)
+        |> manage
     end
   end
 end

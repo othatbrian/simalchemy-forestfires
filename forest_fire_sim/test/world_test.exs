@@ -33,7 +33,6 @@ defmodule WorldTest do
     assert_receive {:debug_location_response, :tree}
   end
 
-  @tag todo: true
   test "can advance a fire" do
     forest = Forest.from_string("&*")
     fire_starter = fn _fire -> :ok end
