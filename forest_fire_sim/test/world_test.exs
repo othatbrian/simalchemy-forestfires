@@ -4,7 +4,6 @@ defmodule WorldTest do
 
   alias ForestFireSim.{Forest, World}
 
-  @tag todo: true
   test "starts fires for all initial fires" do
     forest = Forest.from_string("&*")
     test_process = self
