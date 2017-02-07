@@ -17,7 +17,6 @@ defmodule WorldTest do
     assert_receive {:fire_started, ^xy, ^intensity}
   end
 
-  @tag todo: true
   test "allows another process to peek at locations" do
     forest = Forest.from_string("&*")
     fire_starter = fn _fire -> :ok end
